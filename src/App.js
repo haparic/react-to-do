@@ -32,12 +32,13 @@ class App extends Component {
     this.setState({ todos: todos });
   }
 
-  deleteTodo(e, index) {
-      e.preventDefault();
-      let todos = this.state.todos.filter((todo, i) => i !== index);
-      this.setState({
-        todos: todos
-      });
+  deleteTodo =(props)=>{
+    const { todos } = this.state;
+    todos.splice(props, 1);
+    this.setState({
+        todos,
+    });
+    console.log(this.state.todos)
     }
   render() {
     return (
